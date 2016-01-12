@@ -1,1 +1,1 @@
-web: imowai
+web: /app/.local/bin/imowai
