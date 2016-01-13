@@ -12,11 +12,38 @@ category:            Development
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable imowai
-  hs-source-dirs:      src
-  main-is:             Main.hs
-  default-language:    Haskell2010
+source-repository head
+  type:     git
+  location: https://github.com/IMOKURI/wai-example-using-buildback-stack.git
+
+library
+  exposed-modules:     Imo.App
   build-depends:       base >= 4.7 && < 5
+                     , wai
+                     , http-types
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+executable imowai
+  main-is:             Main.hs
+  other-modules:       Imo.App
+  build-depends:       base >= 4.7 && < 5
+                     , imowai
                      , wai
                      , warp
                      , http-types
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite tests
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  other-modules:       Imo.App
+  build-depends:       base >= 4.7 && < 5
+                     , imowai
+  ghc-options:         -Wall
+  hs-source-dirs:      tests
+  default-language:    Haskell2010
+
