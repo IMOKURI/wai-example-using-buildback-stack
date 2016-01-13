@@ -1,9 +1,10 @@
-{-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 
-import Imo.App
+import Imo.AppSpec
+
+import Test.Hspec (hspec)
 
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = hspec imoAppSpec
 
