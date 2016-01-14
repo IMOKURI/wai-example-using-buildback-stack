@@ -21,11 +21,11 @@ before_install:
   - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 install:
-  - stack setup
-  - stack build
+  - stack --no-terminal setup
+  - stack --no-terminal build
 
 script:
-  - stack test
+  - stack --no-terminal test
 
 notifications:
   email: false
