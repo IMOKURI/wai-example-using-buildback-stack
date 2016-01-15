@@ -4,7 +4,7 @@ module Main where
 
 import Imo.App
 
-import Network.Wai.Middleware.Gzip
+import Network.Wai.Middleware.Gzip (gzip, def)
 import Network.Wai.Handler.Warp (run, Port)
 import System.Environment (getEnvironment)
 import Control.Monad (liftM)
