@@ -4,6 +4,7 @@ module Main where
 
 import Imo.App
 
+import Network.Wai.Middleware.Gzip
 import Network.Wai.Handler.Warp (run, Port)
 import System.Environment (getEnvironment)
 import Control.Monad (liftM)
@@ -11,7 +12,7 @@ import Control.Monad (liftM)
 main :: IO ()
 main = do
   port <- getPort
-  run port imoApp
+  run port $ gzip def $ imoApp
 
 getPort :: IO Port
 getPort = liftM getPort' getEnvironment
