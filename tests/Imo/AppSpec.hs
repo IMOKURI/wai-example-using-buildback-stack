@@ -13,7 +13,7 @@ import Test.Hspec
 imoAppSpec :: Spec
 imoAppSpec = do
   describe "imoApp" $ do
-    it "served correctly" $ flip runSession imoApp $ do
+    it "200 when served correctly" $ flip runSession imoApp $ do
       req <- request (setRawPathInfo defaultRequest "/")
       assertStatus 200 req
       assertHeader "Content-Type" "text/plain" req
