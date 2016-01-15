@@ -19,8 +19,5 @@ index = responseLBS
   "Hello web!"
 
 notFound :: Response
-notFound = responseLBS
-  status404
-  [("Content-Type", "text/plain")]
-  "404 - Not Found"
+notFound = responseLBS status404 [("Content-Type", "text/plain")] "404 - Not Found"
 
