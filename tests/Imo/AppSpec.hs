@@ -1,8 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Imo.AppSpec
-( imoAppSpec
-) where
+module Imo.AppSpec where
 
 import Imo.App
 
@@ -10,8 +8,8 @@ import Network.Wai
 import Network.Wai.Test
 import Test.Hspec
 
-imoAppSpec :: Spec
-imoAppSpec = do
+spec :: Spec
+spec = do
   describe "imoApp" $ do
     it "200 when served correctly" $ flip runSession imoApp $ do
       req <- request (setRawPathInfo defaultRequest "/")

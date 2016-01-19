@@ -1,10 +1,1 @@
-
-module Main where
-
-import Imo.AppSpec
-
-import Test.Hspec (hspec)
-
-main :: IO ()
-main = hspec imoAppSpec
-
+{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
