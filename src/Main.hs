@@ -12,7 +12,7 @@ import Control.Monad (liftM)
 main :: IO ()
 main = do
   port <- getPort
-  run port $ gzip def $ imoApp
+  run port $ gzip def imoApp
 
 getPort :: IO Port
 getPort = liftM getPort' getEnvironment
@@ -21,4 +21,3 @@ getPort = liftM getPort' getEnvironment
 
 defaultPort :: Port
 defaultPort = 3000
-
