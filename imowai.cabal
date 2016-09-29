@@ -42,6 +42,7 @@ test-suite tests
   type:                exitcode-stdio-1.0
   main-is:             Spec.hs
   other-modules:       Imo.App
+                     , Imo.AppSpec
   build-depends:       base >= 4.7 && < 5
                      , imowai
                      , wai
